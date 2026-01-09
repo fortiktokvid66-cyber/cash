@@ -1,9 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { supabase } from '../../../lib/supabase'; // fixed path
+import { supabase } from '../../../lib/supabase';
 
-// Define the type for a QR code row
 type QRCode = {
   id: string;
   method: string;
@@ -16,8 +15,8 @@ export default function DepositPage() {
   useEffect(() => {
     async function fetchQRCodes() {
       const { data, error } = await supabase
-        .from<QRCode>('payment_qrcodes')
-        .select('*'); // fetch all QR codes including id, method, qr_url
+        .from<'payment_qrcodes', QRCode>('payment_qrcodes')
+        .select('*');
 
       if (error) {
         console.error('Error fetching QR codes:', error.message);
