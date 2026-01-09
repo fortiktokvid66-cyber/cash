@@ -132,10 +132,7 @@ export default function FreeplayPage() {
               borderRadius: 5,
               cursor: 'pointer'
             }}
-            onClick={() => {
-              if (window.Drift) window.Drift.api.startInteraction();
-              else alert('Drift not loaded');
-            }}
+            
           >
             Drift
           </button>
