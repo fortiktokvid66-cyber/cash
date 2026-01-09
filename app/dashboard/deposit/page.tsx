@@ -49,13 +49,6 @@ export default function DepositPage() {
     borderRadius: 5,
     cursor: 'pointer',
   }}
-  onClick={() => {
-    if (window.LC_API) {
-      window.LC_API.open_chat_window(); // LiveChat open function
-    } else {
-      alert('LiveChat not loaded');
-    }
-  }}
 >
   LiveChat
 </button>
