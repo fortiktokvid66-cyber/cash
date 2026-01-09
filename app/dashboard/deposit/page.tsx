@@ -3,6 +3,14 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../../../lib/supabase'; // fixed path
 
+type QRCode = {
+  id: string;
+  method: string;
+  qr_url: string;
+};
+
+const [qrcodes, setQRCodes] = useState<QRCode[]>([]);
+
 export default function DepositPage() {
   const [qrCodes, setQRCodes] = useState([]);
 
