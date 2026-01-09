@@ -39,23 +39,27 @@ export default function DepositPage() {
           You can get 150% first deposit bonus right away. <br />
           Join Drift or Facebook page to send screenshot of payment.
         </p>
-        <button
-          style={{
-            padding: '12px 20px',
-            fontSize: 16,
-            backgroundColor: '#4caf50',
-            color: 'white',
-            border: 'none',
-            borderRadius: 5,
-            cursor: 'pointer',
-          }}
-          onClick={() => {
-            if (window.Drift) window.Drift.api.startInteraction();
-            else alert('Drift not loaded');
-          }}
-        >
-          Drift
-        </button>
+       <button
+  style={{
+    padding: '12px 20px',
+    fontSize: 16,
+    backgroundColor: '#4caf50',
+    color: 'white',
+    border: 'none',
+    borderRadius: 5,
+    cursor: 'pointer',
+  }}
+  onClick={() => {
+    if (window.LC_API) {
+      window.LC_API.open_chat_window(); // LiveChat open function
+    } else {
+      alert('LiveChat not loaded');
+    }
+  }}
+>
+  LiveChat
+</button>
+
         &nbsp;
         <button
           style={{
